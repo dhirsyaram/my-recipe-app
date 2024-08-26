@@ -18,11 +18,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private val hostname = "api.spoonacular.com"
+    private const val HOSTNAME = "api.spoonacular.com"
     private val certificatePinner = CertificatePinner.Builder()
-        .add(hostname, "sha256/PbTCXXUtf4SSIzyHDQIq2eO8kV4usvbnSOPc/CvgGGM=")
-        .add(hostname, "sha256/kIdp6NNEd8wsugYyyIYFsi1ylMCED3hZbSR8ZFsa/A4=")
-        .add(hostname, "sha256/mEflZT5enoR1FuXLgYYGqnVEoZvmf9c2bVBpiOjYQ0c=")
+        .add(HOSTNAME, "sha256/PbTCXXUtf4SSIzyHDQIq2eO8kV4usvbnSOPc/CvgGGM=")
+        .add(HOSTNAME, "sha256/kIdp6NNEd8wsugYyyIYFsi1ylMCED3hZbSR8ZFsa/A4=")
+        .add(HOSTNAME, "sha256/mEflZT5enoR1FuXLgYYGqnVEoZvmf9c2bVBpiOjYQ0c=")
         .build()
 
     @Provides

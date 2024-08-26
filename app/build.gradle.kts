@@ -25,7 +25,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -46,7 +53,7 @@ android {
     dynamicFeatures += setOf(":favorite")
 }
 
-apply (from = "../common_dependencies.gradle")
+apply(from = "../common_dependencies.gradle")
 
 dependencies {
     implementation(project(":core"))
